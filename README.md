@@ -1,4 +1,4 @@
-# PP2
+//# PP2
 
 ## Goal
 This practical exercise is supposed to teach you how the shell-interface to your operating system works. 
@@ -39,12 +39,15 @@ To prompt someone means:
 > "​to incite or move them to action, or to assist them by suggesting something they may have forgotten or not considered."
 An example of this is given in the picture below. 
 Prompts may look different on different machines and can be configured individually - we'll see how in a later exercise.
-Mine shows my `<username>@<hostname>`, then uses a colon `:`, then a path which is `~` in case of the picture and a finalizing `$` which indicates the end of the prompt.
+Mine shows my `<username>@<hostname>`, then uses a colon `:`, then a path which is `~` in case of the picture and a finalizing `$` which indicates the end of the prompt.+
 You are always free to type a new command, as soon as the computer _prompts_ you to an action!
 
 ![Prompt](./assets/prompt.png)
 
 After logging in sucessfully, and getting the prompt, type `clear` and hit `enter` to clear your terminal emulators output.
+![avant clear](https://github.com/user-attachments/assets/32f5828c-d2b9-42e1-82a8-de7e43471086)
+
+![apres clear](https://github.com/user-attachments/assets/1bcf0b27-f3c4-4dd6-92a5-167df2787442)
 
 ---
 
@@ -66,9 +69,15 @@ Let's get the value back by telling our shell to access the identifier:
 ```bash
 echo $return_value
 ```
+![without$](https://github.com/user-attachments/assets/f297a444-d228-4b90-9be3-f895f95914fa)
+![Berechnung 5+9](https://github.com/user-attachments/assets/982f958b-3e39-4a84-a43d-64bcfde01afc)
+
+![uebung2suite](https://github.com/user-attachments/assets/0b5d4daf-6931-430a-a5be-3932c99e8539)
+
 Take notice of the prepending `$` here. 
 Try accessing the `return_value` identifier without prepending `$`.
 **What happens and why?**
+der prompt return nicht also kein+ Ergebnis
 
 <details>
     <summary>You Answer</summary>
@@ -94,6 +103,7 @@ plus_func
 and pressing `enter`.
 
 ![Invoking the Plus Function](./assets/plus_func.png)
+![Task 3](https://github.com/user-attachments/assets/a97dc6dd-b786-46d6-a816-a0041bdef770)
 
 <details>
     <summary>Calling a Function</summary>
@@ -115,6 +125,7 @@ Invoke the function and add two integral numbers after the call:
 plus_func 5 8
 ```
 We now call `var1` and `var2` _variable identifiers_, because they can vary from function call to function call!
+![task 4](https://github.com/user-attachments/assets/88fd3ccf-5bdf-4106-a2ee-41d035199c3c)
 
 ---
 
@@ -265,6 +276,7 @@ These examples demonstrate various fundamental operations in Bash scripting, inc
 ```bash
 your code
 ```
+![task 5 richt](https://github.com/user-attachments/assets/8a82e9b0-5bf1-4eaf-9a0f-572a451237d7)
 
 </details>
 
@@ -280,6 +292,12 @@ Redefine your function-identifier again manually and then run the following comm
 ```bash
 declare -f <your function-identifier>
 ```
+![task 61](https://github.com/user-attachments/assets/3921c656-d0b6-473b-b0b3-a06cdc5749ae)
+![task 62](https://github.com/user-attachments/assets/7596add7-4556-413c-8d5b-72d49106fba5)
+![65](https://github.com/user-attachments/assets/fdfe981d-6491-4264-b9bb-cc629883469c)
+![task66](https://github.com/user-attachments/assets/a4799d96-d30e-41ea-baf1-7200266d615f)
+
+![task 63](https://github.com/user-attachments/assets/4bd02a72-ad7b-4970-86aa-e5431b761c2d)
 
 ![Using the declare command](./assets/declare.png)
 
@@ -299,9 +317,11 @@ cat ./function
 * Redirect the second function into that file as well, but using the append `>>` operator
 
 **What happend?**
+Die Funktion wurde im terminal gespeichert
 <details>
     <summary>Your Explaination</summary>
     .....
+![task66](https://github.com/user-attachments/assets/2292fd7c-27ad-4efa-891d-1feeaa235518)
 
 </details>
 
@@ -342,9 +362,10 @@ The idea of it being a _folder_ arose with **Windows** which visualized director
 You can use a shorthand within your calls to add this string as a prefix to any file that you reference in that call by writing `./`.
 
 **Look at task 6 again. What is the complete filepath of your functions file?**
+/home/samy/function
 <details>
     <summary>Your Answer</summary>
-    ....
+    /home/samy/function
 </details>
 
 All filenames start with a `/`. 
@@ -354,21 +375,25 @@ You can retrieve the absolute path of a file by running the `realpath` command a
 ```bash
 realpath ./functions
 ```
+![task72](https://github.com/user-attachments/assets/da5fb1c1-e2e5-4820-ab2f-b244f236d6b1)
 
 ### Task 8: Listing Files
 In order to list all files with your `pwd`, type the `ls` command. 
 If you want more information about those files type `ls -la`
+![task8](https://github.com/user-attachments/assets/efc22244-84ed-490b-85a5-57325ed615ac)
 
 ### Task 9: Switching your `pwd`
 Use the `cd` command to switch your directory. 
 Let's navigate into the basis of your filesystem, the `root` directory:
 ```bash
 cd /
-```
+```![task9](https://github.com/user-attachments/assets/d2cef235-8dbb-4de6-a94e-b9febe7c2499)
+![task92](https://github.com/user-attachments/assets/66deee76-4d0a-40ed-8336-6fcdfed072f2)
+
 **Run `ls` again and insert the content here:**
 <details>
     <summary>Your Answer</summary>
-    ....
+    assets  function
 </details>
 
 Now navigate through your filesystem using `cd` and the name of the directory you want to set as your new `pwd`.
@@ -397,6 +422,8 @@ You can run it by calling `apt --version` for example.
 To use it properly, you can read it's documentation by running `man apt`.
 If you opened it, browse through it or close it by hitting the `q`-key.
 A short introduction can be opened by running `apt --help`.
+![task101](https://github.com/user-attachments/assets/b4e4546f-b127-4299-86d1-8093fb05d03b)
+![task102](https://github.com/user-attachments/assets/ff597a31-3e57-4bd6-b83c-f205e7c8577d)
 
 ---
 
